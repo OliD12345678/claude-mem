@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Calls – Call Coach</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+body{margin:0;background:#0b111b}
+a{color:#7fb2ec;text-decoration:none}a:hover{color:#a9cdf5}
+.nav{color:#8d99aa;font-size:17px}.nav:hover{color:#eef2f7}
+button{font-family:inherit}
+.row{display:flex;gap:16px;align-items:center;padding:16px 8px;border-top:1px solid #1f2836;color:#eef2f7;flex-wrap:wrap;border-radius:12px}
+.row:hover{background:#121a26;color:#eef2f7}
+</style>
+</helmet>
+<div style="position: relative; min-height: 1500px; background: #0b111b; color: #eef2f7; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, sans-serif; overflow: hidden">
+  <svg viewBox="0 0 400 400" width="980" height="980" aria-hidden="true" style="position: absolute; right: -300px; top: 260px; opacity: 0.045; pointer-events: none">
+    <g fill="#cfd8e6" transform="translate(200 200)">
+      <path d="M0 -20 C -28 -70 -22 -130 0 -168 C 22 -130 28 -70 0 -20Z"/>
+      <path d="M0 -20 C -28 -70 -22 -130 0 -168 C 22 -130 28 -70 0 -20Z" transform="rotate(45)"/>
+      <path d="M0 -20 C -28 -70 -22 -130 0 -168 C 22 -130 28 -70 0 -20Z" transform="rotate(90)"/>
+      <path d="M0 -20 C -28 -70 -22 -130 0 -168 C 22 -130 28 -70 0 -20Z" transform="rotate(135)"/>
+      <path d="M0 -20 C -28 -70 -22 -130 0 -168 C 22 -130 28 -70 0 -20Z" transform="rotate(180)"/>
+      <path d="M0 -20 C -28 -70 -22 -130 0 -168 C 22 -130 28 -70 0 -20Z" transform="rotate(225)"/>
+      <path d="M0 -20 C -28 -70 -22 -130 0 -168 C 22 -130 28 -70 0 -20Z" transform="rotate(270)"/>
+      <path d="M0 -20 C -28 -70 -22 -130 0 -168 C 22 -130 28 -70 0 -20Z" transform="rotate(315)"/>
+      <circle r="36"/>
+    </g>
+    <circle cx="200" cy="200" r="192" fill="none" stroke="#cfd8e6" stroke-width="12" stroke-dasharray="1 24" stroke-linecap="round"/>
+  </svg>
+
+  <header style="position: relative; max-width: 860px; margin: 0 auto; padding: 18px 24px; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap">
+    <a href="Coach.dc.html" aria-label="Call Coach home" style="display: flex">
+      <svg viewBox="0 0 40 40" width="36" height="36" aria-hidden="true"><circle cx="20" cy="20" r="18" fill="none" stroke="#eef2f7" stroke-width="2" stroke-dasharray="1 3"/><g fill="#eef2f7" transform="translate(20 20)"><path d="M0 -2 C -4 -7 -3 -12 0 -14 C 3 -12 4 -7 0 -2Z"/><path d="M0 -2 C -4 -7 -3 -12 0 -14 C 3 -12 4 -7 0 -2Z" transform="rotate(60)"/><path d="M0 -2 C -4 -7 -3 -12 0 -14 C 3 -12 4 -7 0 -2Z" transform="rotate(120)"/><path d="M0 -2 C -4 -7 -3 -12 0 -14 C 3 -12 4 -7 0 -2Z" transform="rotate(180)"/><path d="M0 -2 C -4 -7 -3 -12 0 -14 C 3 -12 4 -7 0 -2Z" transform="rotate(240)"/><path d="M0 -2 C -4 -7 -3 -12 0 -14 C 3 -12 4 -7 0 -2Z" transform="rotate(300)"/></g></svg>
+    </a>
+    <nav aria-label="Main" style="display: flex; gap: 28px; align-items: center">
+      <a class="nav" href="Coach.dc.html">Coach</a>
+      <a class="nav" href="Calls.dc.html" aria-current="page" style="color: #eef2f7">Calls</a>
+      <a class="nav" href="Main.dc.html">This week</a>
+    </nav>
+    <button aria-label="Account menu for Drew" style="width: 44px; height: 44px; border-radius: 50%; border: 0; background: #3f86d1; color: #fff; font-weight: 700; font-size: 16px; cursor: pointer">D</button>
+  </header>
+
+  <main style="position: relative; max-width: 780px; margin: 0 auto; padding: 8px 24px 80px; display: flex; flex-direction: column; gap: 22px">
+    <div style="display: flex; flex-direction: column; gap: 6px">
+      <h1 style="margin: 0; font-size: 44px; letter-spacing: -0.5px">Calls</h1>
+      <p style="margin: 0; color: #9aa6b6; font-size: 17px">Last 2 weeks · 19 calls analyzed</p>
+    </div>
+
+    <div style="display: flex; gap: 10px; flex-wrap: wrap; align-items: center">
+      <button style="display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 16px; border-radius: 999px; border: 1px solid #2c3749; background: #151d2a; color: #eef2f7; font-size: 16px; font-weight: 600; cursor: pointer">Everyone <svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></button>
+      <span aria-hidden="true" style="width: 1px; height: 24px; background: #2c3749"></span>
+      <div role="group" aria-label="Category" style="display: flex; gap: 8px; flex-wrap: wrap">
+        <sc-for list="{{cats}}" as="c" hint-placeholder-count="5">
+          <button aria-pressed="{{c.on}}" onClick="{{c.pick}}" style="{{c.style}}">{{c.label}}</button>
+        </sc-for>
+      </div>
+    </div>
+
+    <div role="list" style="display: flex; flex-direction: column">
+      <div aria-hidden="true" style="display: flex; gap: 16px; padding: 0 8px 10px; font-size: 12px; font-weight: 700; letter-spacing: 1.5px; color: #7f8b9b">
+        <span style="flex: 1 1 260px">CALL</span>
+        <span style="width: 150px">DISCOVERY <span style="color: #c8b8f2">(PROPOSED)</span></span>
+        <span style="width: 110px">BOOKING ASK</span>
+      </div>
+      <sc-for list="{{rows}}" as="r" hint-placeholder-count="8">
+        <a role="listitem" class="row" href="CallDetail.dc.html">
+          <span style="flex: 1 1 260px; min-width: 0; display: flex; flex-direction: column; gap: 4px">
+            <span style="font-size: 18px; font-weight: 600">Call with {{r.who}} <sc-if value="{{r.isCard}}" hint-placeholder-val="{{ false }}"><span style="margin-left: 6px; font-size: 12px; font-weight: 700; letter-spacing: 1px; padding: 3px 8px; border-radius: 6px; background: rgba(63,134,209,0.2); color: #b3d4f7">THIS WEEK'S CARD</span></sc-if></span>
+            <span style="font-size: 14px; color: #8d99aa"><strong style="color: #c9d2de; font-weight: 600">{{r.rep}}</strong> · {{r.when}} · {{r.len}} · {{r.moments}}</span>
+          </span>
+          <span style="width: 150px; display: flex; align-items: center; gap: 8px">
+            <span aria-hidden="true" style="display: flex; gap: 3px"><span style="{{r.d1}}"></span><span style="{{r.d2}}"></span><span style="{{r.d3}}"></span></span>
+            <span style="font-size: 14px; color: #c9d2de">{{r.disc}} of 3</span>
+          </span>
+          <span style="width: 110px; font-size: 14px; color: #c9d2de">{{r.ask}}</span>
+        </a>
+      </sc-for>
+    </div>
+  </main>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1280,"height":1500}}'>
+class Component extends DCLogic {
+  constructor(props) { super(props); this.state = { cat: 'all' }; }
+  renderVals() {
+    const cat = this.state.cat;
+    const list = [['all', 'All'], ['discovery', 'Discovery'], ['objection', 'Objection'], ['value', 'Value'], ['booking', 'Booking']];
+    const base = 'min-height:44px;padding:0 16px;border-radius:999px;font-size:15px;font-weight:600;cursor:pointer;';
+    const cats = list.map((c) => ({
+      label: c[1],
+      on: cat === c[0],
+      style: base + (cat === c[0] ? 'border:1px solid #3f86d1;background:#3f86d1;color:#fff' : 'border:1px solid #2c3749;background:transparent;color:#c9d2de'),
+      pick: () => this.setState({ cat: c[0] })
+    }));
+    const data = [
+      ['Sam', 'Makenzie', 'Sat Oct 3, 10:15 AM', '3:48', 1, 'Asked', ['discovery'], false],
+      ['Hannah', 'Makenzie', 'Fri Oct 2, 5:40 PM', '5:02', 3, 'Asked', [], false],
+      ['Leah', 'Makenzie', 'Thu Oct 1, 11:20 AM', '4:31', 2, 'Asked', ['booking'], false],
+      ['Rachel', 'Jordan', 'Fri Sep 25, 2:10 PM', '3:12', 2, 'Asked', ['discovery'], true],
+      ['Priya', 'Morgan', 'Fri Sep 25, 4:05 PM', '6:20', 1, 'Not asked', ['value'], true],
+      ['Victoria', 'Makenzie', 'Sat Sep 26, 12:32 PM', '4:19', 1, 'Asked', ['discovery', 'objection'], true],
+      ['Dana', 'Caylin', 'Thu Sep 24, 6:55 PM', '2:58', 2, 'Not asked', ['booking'], true],
+      ['Kim', 'Morgan', 'Wed Sep 23, 9:30 AM', '3:35', 0, 'Not asked', ['value', 'booking'], false]
+    ];
+    const dot = (on) => 'width:14px;height:8px;border-radius:999px;background:' + (on ? '#5cc6c0' : '#2a3547');
+    const rows = data
+      .filter((d) => cat === 'all' || d[6].indexOf(cat) >= 0)
+      .map((d) => ({
+        who: d[0], rep: d[1], when: d[2], len: d[3], disc: d[4], ask: d[5], isCard: d[7],
+        moments: d[6].length ? d[6].length + (d[6].length === 1 ? ' moment' : ' moments') : 'no moments',
+        d1: dot(d[4] >= 1), d2: dot(d[4] >= 2), d3: dot(d[4] >= 3)
+      }));
+    return { cats: cats, rows: rows };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Backend changes needed</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+body{margin:0}
+code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:14px;color:#a9cdf5;background:#141c28;padding:1px 6px;border-radius:5px}
+li{margin:0}
+</style>
+</helmet>
+<div style="width: 1000px; height: 1720px; box-sizing: border-box; padding: 56px 64px; background: #0f1622; color: #e4eaf2; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, sans-serif; display: flex; flex-direction: column; gap: 26px">
+  <div style="display: flex; flex-direction: column; gap: 8px">
+    <span style="font-size: 13px; font-weight: 700; letter-spacing: 2px; color: #7fb2ec">BUILD NOTES</span>
+    <h1 style="margin: 0; font-size: 34px; color: #eef2f7">What needs new data or backend changes</h1>
+    <p style="margin: 0; font-size: 16px; color: #9aa6b6; line-height: 1.5">Front end reuses the existing /v2 card, audio buttons, nav and avatar components. New: the This week route (replaces /v2/team), a public /r/:token route, and the Discovery category.</p>
+  </div>
+
+  <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px; font-size: 15px; line-height: 1.55">
+    <section style="display: flex; flex-direction: column; gap: 8px">
+      <h2 style="margin: 0; font-size: 18px; color: #eef2f7">1 · Rep card links (new)</h2>
+      <ul style="margin: 0; padding-left: 18px; display: flex; flex-direction: column; gap: 6px; color: #c9d2de">
+        <li>Table <code>card_links</code>: token hash, rep_id, card_id, sent_by, channel, sent_at, expires_at (7 days), revoked_at.</li>
+        <li>Public <code>GET /r/:token</code>, no login. Serves only that card's text and a short-lived signed URL for the 0:28 clip. Rate-limited, <code>noindex</code>.</li>
+        <li>Expired or revoked token shows the expired screen. A saved commitment survives expiry.</li>
+        <li>Token maps to rep_id, so a future logged-in rep home can show the same card and history.</li>
+      </ul>
+    </section>
+
+    <section style="display: flex; flex-direction: column; gap: 8px">
+      <h2 style="margin: 0; font-size: 18px; color: #eef2f7">2 · Sending (new)</h2>
+      <ul style="margin: 0; padding-left: 18px; display: flex; flex-direction: column; gap: 6px; color: #c9d2de">
+        <li>Rep phone and email on the staff profile.</li>
+        <li>SMS and email provider with delivery webhooks. Fixed, privacy-safe templates: rep first name, link, nothing about the prospect.</li>
+        <li>Link preview (Open Graph tags) is generic: “Your coaching card for this week.”</li>
+        <li><code>POST /cards/:id/send</code> and a batch “send all remaining” endpoint.</li>
+      </ul>
+    </section>
+
+    <section style="display: flex; flex-direction: column; gap: 8px">
+      <h2 style="margin: 0; font-size: 18px; color: #eef2f7">3 · Status events (new)</h2>
+      <ul style="margin: 0; padding-left: 18px; display: flex; flex-direction: column; gap: 6px; color: #c9d2de">
+        <li>Events: sent, delivered, opened, played (clip reached about 80%), committed.</li>
+        <li>This week reads the latest event per rep per week. All events go to the existing audit log.</li>
+      </ul>
+    </section>
+
+    <section style="display: flex; flex-direction: column; gap: 8px">
+      <h2 style="margin: 0; font-size: 18px; color: #eef2f7">4 · Commitments (new)</h2>
+      <ul style="margin: 0; padding-left: 18px; display: flex; flex-direction: column; gap: 6px; color: #c9d2de">
+        <li>Table <code>commitments</code>: link_id, rep_id, card_id, text, starter_used, submitted_at, edited_at, source (link or app).</li>
+        <li>Server rejects empty or whitespace-only text. Edits keep history.</li>
+        <li>Manager sees who submitted and when.</li>
+        <li>Optional manager note stored on the send, shown on the card only.</li>
+      </ul>
+    </section>
+
+    <section style="display: flex; flex-direction: column; gap: 8px">
+      <h2 style="margin: 0; font-size: 18px; color: #eef2f7">5 · Recommended call per rep (new)</h2>
+      <ul style="margin: 0; padding-left: 18px; display: flex; flex-direction: column; gap: 6px; color: #c9d2de">
+        <li>Score each moment from the last 7 days: impact × matches the rep's focus × clip quality, skipping cards already sent.</li>
+        <li>Return a one-line reason string. The manager can pick a different call from Coach.</li>
+        <li>“Start here” order: most calls, then oldest unsent.</li>
+      </ul>
+    </section>
+
+    <section style="display: flex; flex-direction: column; gap: 8px">
+      <h2 style="margin: 0; font-size: 18px; color: #eef2f7">6 · Discovery tracking (proposed)</h2>
+      <ul style="margin: 0; padding-left: 18px; display: flex; flex-direction: column; gap: 6px; color: #c9d2de">
+        <li>New category beside Objection, Value and Booking in the analysis prompt and the card schema.</li>
+        <li>Per call: tag rep questions about the prospect's situation, goals or concerns that come before the first pitch or fact segment. Store count and timestamps.</li>
+        <li>Suggested target (3) is a studio setting. Label it “Proposed metric” until it has been checked against manual labels on about 50 calls.</li>
+        <li>“This count looks wrong” saves a correction for tuning.</li>
+      </ul>
+    </section>
+
+    <section style="display: flex; flex-direction: column; gap: 8px">
+      <h2 style="margin: 0; font-size: 18px; color: #eef2f7">7 · Was the commitment kept? (new)</h2>
+      <ul style="margin: 0; padding-left: 18px; display: flex; flex-direction: column; gap: 6px; color: #c9d2de">
+        <li>For the rep's next 3 analyzed calls after submitted_at, run a check: commitment text + transcript → kept / not yet / not applicable, with an evidence quote and timestamp.</li>
+        <li>Not applicable (no matching situation) is left out of “X of Y”.</li>
+        <li>The manager can override a result on the call page.</li>
+      </ul>
+    </section>
+
+    <section style="display: flex; flex-direction: column; gap: 8px">
+      <h2 style="margin: 0; font-size: 18px; color: #eef2f7">8 · Privacy</h2>
+      <ul style="margin: 0; padding-left: 18px; display: flex; flex-direction: column; gap: 6px; color: #c9d2de">
+        <li>Rep link copy uses prospect first names only. Health terms are filtered out of rep-facing card text and blocked in all SMS, email and preview text.</li>
+        <li>Commitment text can contain health details, so show it only in logged-in manager views. Never send it in a message.</li>
+        <li>Booking-ask rate per rep per week already exists. Team pulse reuses it.</li>
+      </ul>
+    </section>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1000,"height":1720}}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

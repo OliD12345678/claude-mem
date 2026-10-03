@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Your card – line first</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+body{margin:0;background:#0b111b}
+a{color:#7fb2ec;text-decoration:none}a:hover{color:#a9cdf5}
+button,textarea{font-family:inherit}
+.chip{display:block;width:100%;text-align:left;min-height:48px;padding:12px 16px;border-radius:16px;border:1px solid #2c3749;background:#172030;color:#dbe2eb;font-size:15px;line-height:1.35;cursor:pointer}
+.chip:hover{background:#1e2a3d;border-color:#3c6a9e}
+</style>
+</helmet>
+<div style="position: relative; width: 390px; height: 1760px; background: #0b111b; color: #eef2f7; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, sans-serif; overflow: hidden">
+  <svg viewBox="0 0 400 400" width="560" height="560" aria-hidden="true" style="position: absolute; left: -260px; top: 420px; opacity: 0.045; pointer-events: none">
+    <g fill="#cfd8e6" transform="translate(200 200)">
+      <path d="M0 -20 C -28 -70 -22 -130 0 -168 C 22 -130 28 -70 0 -20Z"/>
+      <path d="M0 -20 C -28 -70 -22 -130 0 -168 C 22 -130 28 -70 0 -20Z" transform="rotate(45)"/>
+      <path d="M0 -20 C -28 -70 -22 -130 0 -168 C 22 -130 28 -70 0 -20Z" transform="rotate(90)"/>
+      <path d="M0 -20 C -28 -70 -22 -130 0 -168 C 22 -130 28 -70 0 -20Z" transform="rotate(135)"/>
+      <path d="M0 -20 C -28 -70 -22 -130 0 -168 C 22 -130 28 -70 0 -20Z" transform="rotate(180)"/>
+      <path d="M0 -20 C -28 -70 -22 -130 0 -168 C 22 -130 28 -70 0 -20Z" transform="rotate(225)"/>
+      <path d="M0 -20 C -28 -70 -22 -130 0 -168 C 22 -130 28 -70 0 -20Z" transform="rotate(270)"/>
+      <path d="M0 -20 C -28 -70 -22 -130 0 -168 C 22 -130 28 -70 0 -20Z" transform="rotate(315)"/>
+      <circle r="36"/>
+    </g>
+  </svg>
+
+  <header style="position: relative; display: flex; align-items: center; gap: 10px; padding: 18px 20px">
+    <svg viewBox="0 0 40 40" width="30" height="30" aria-hidden="true"><circle cx="20" cy="20" r="18" fill="none" stroke="#eef2f7" stroke-width="2" stroke-dasharray="1 3"/><g fill="#eef2f7" transform="translate(20 20)"><path d="M0 -2 C -4 -7 -3 -12 0 -14 C 3 -12 4 -7 0 -2Z"/><path d="M0 -2 C -4 -7 -3 -12 0 -14 C 3 -12 4 -7 0 -2Z" transform="rotate(60)"/><path d="M0 -2 C -4 -7 -3 -12 0 -14 C 3 -12 4 -7 0 -2Z" transform="rotate(120)"/><path d="M0 -2 C -4 -7 -3 -12 0 -14 C 3 -12 4 -7 0 -2Z" transform="rotate(180)"/><path d="M0 -2 C -4 -7 -3 -12 0 -14 C 3 -12 4 -7 0 -2Z" transform="rotate(240)"/><path d="M0 -2 C -4 -7 -3 -12 0 -14 C 3 -12 4 -7 0 -2Z" transform="rotate(300)"/></g></svg>
+    <span style="font-size: 14px; letter-spacing: 2px; font-weight: 600">CALL COACH</span>
+    <span style="font-size: 13px; color: #8d99aa">· Club Pilates Vinings</span>
+  </header>
+
+  <sc-if value="{{notDone}}" hint-placeholder-val="{{ true }}">
+    <main style="position: relative; padding: 4px 20px 32px; display: flex; flex-direction: column; gap: 22px">
+      <span style="font-size: 13px; font-weight: 700; letter-spacing: 2px; color: #7fb2ec">MAKENZIE'S CARD THIS WEEK · ABOUT 2 MIN</span>
+
+      <section aria-labelledby="line" style="display: flex; flex-direction: column; gap: 14px">
+        <h1 id="line" style="margin: 0; font-size: 17px; font-weight: 600; color: #9aa6b6">Next time a prospect shares a worry, try:</h1>
+        <blockquote style="margin: 0; font-size: 30px; line-height: 1.25; font-weight: 700; letter-spacing: -0.3px">“I'm so sorry to hear that. Can I ask what it's been like for you lately?”</blockquote>
+        <p style="margin: 0; font-size: 16px; line-height: 1.5; color: #c9d2de">Ask first, then share facts. You kept Victoria booked. Great save. This makes the next one easier.</p>
+      </section>
+
+      <section aria-label="Hear the moment" style="background: #151d2a; border: 1px solid #263042; border-radius: 24px; padding: 16px; display: flex; flex-direction: column; gap: 12px">
+        <div style="display: flex; align-items: center; gap: 12px">
+          <button onClick="{{toggle}}" aria-label="{{playLabel}}" style="flex: none; width: 52px; height: 52px; border-radius: 50%; border: 0; background: #3f86d1; color: #fff; display: grid; place-items: center; cursor: pointer">
+            <sc-if value="{{playing}}" hint-placeholder-val="{{ false }}"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" fill="#fff"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg></sc-if>
+            <sc-if value="{{paused}}" hint-placeholder-val="{{ true }}"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" fill="#fff"><path d="M8 5.5v13a1 1 0 0 0 1.5.9l10-6.5a1 1 0 0 0 0-1.7l-10-6.5A1 1 0 0 0 8 5.5z"/></svg></sc-if>
+          </button>
+          <div style="flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px">
+            <span style="font-size: 17px; font-weight: 700">Hear the moment</span>
+            <span style="font-size: 14px; color: #9aa6b6">Call with Victoria · Sep 26 · {{time}} / 0:28</span>
+          </div>
+        </div>
+        <div aria-hidden="true" style="height: 6px; border-radius: 999px; background: #2a3547; overflow: hidden"><div style="{{barStyle}}"></div></div>
+      </section>
+
+      <div style="display: flex; flex-direction: column; gap: 10px">
+        <p style="margin: 0; font-size: 15px; line-height: 1.5; color: #9aa6b6">On this call: 1 question about Victoria before pitching. The goal is 3. <span style="color: #c8b8f2; font-size: 12px; font-weight: 700; letter-spacing: 1px">NEW MEASURE</span></p>
+        <div style="display: flex; gap: 12px; align-items: flex-start; padding: 14px 16px; border-radius: 18px; background: #131b27; border: 1px solid #222c3b">
+          <div aria-hidden="true" style="flex: none; width: 32px; height: 32px; border-radius: 50%; background: #3f86d1; display: grid; place-items: center; font-weight: 700; font-size: 14px">D</div>
+          <p style="margin: 0; font-size: 15px; line-height: 1.45; color: #dbe2eb"><strong>Drew:</strong> You kept her on the books. That's the hard part. This is a small tweak.</p>
+        </div>
+      </div>
+
+      <section aria-labelledby="plan" style="display: flex; flex-direction: column; gap: 12px; padding-top: 8px; border-top: 1px solid #1f2836">
+        <label id="plan" for="commit2" style="font-size: 22px; font-weight: 700; line-height: 1.3; padding-top: 14px">What will you do differently on your next call?</label>
+        <div style="display: flex; flex-direction: column; gap: 8px">
+          <span style="font-size: 14px; color: #8d99aa">Tap one to start, then make it yours:</span>
+          <sc-for list="{{starters}}" as="s" hint-placeholder-count="3">
+            <button class="chip" onClick="{{s.pick}}">{{s.t}}</button>
+          </sc-for>
+        </div>
+        <textarea id="commit2" rows="4" value="{{text}}" onChange="{{onText}}" placeholder="In your own words…" style="width: 100%; box-sizing: border-box; border-radius: 18px; border: 1px solid #3a4658; background: #111925; color: #eef2f7; padding: 14px 16px; font-size: 17px; line-height: 1.45; resize: none"></textarea>
+        <span style="font-size: 14px; color: #9aa6b6">{{hint}}</span>
+        <button onClick="{{submit}}" disabled="{{submitDisabled}}" style="{{submitStyle}}">Save my plan</button>
+        <span style="font-size: 13px; color: #8d99aa; text-align: center">Drew will see this. Link expires Oct 7.</span>
+      </section>
+    </main>
+  </sc-if>
+
+  <sc-if value="{{done}}" hint-placeholder-val="{{ false }}">
+    <main style="position: relative; padding: 48px 24px; display: flex; flex-direction: column; gap: 22px; align-items: flex-start">
+      <div aria-hidden="true" style="width: 72px; height: 72px; border-radius: 50%; background: rgba(116,198,157,0.16); display: grid; place-items: center">
+        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#9ee0bd" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+      </div>
+      <h1 style="margin: 0; font-size: 32px; line-height: 1.15">You're done for this week, Makenzie.</h1>
+      <div style="width: 100%; box-sizing: border-box; background: #151d2a; border: 1px solid #263042; border-radius: 22px; padding: 20px; display: flex; flex-direction: column; gap: 8px">
+        <span style="font-size: 13px; font-weight: 700; letter-spacing: 2px; color: #8fb4de">YOUR PLAN</span>
+        <p style="margin: 0; font-size: 19px; line-height: 1.45; font-weight: 600">“{{text}}”</p>
+        <span style="font-size: 14px; color: #8d99aa">Saved just now</span>
+      </div>
+      <p style="margin: 0; font-size: 17px; line-height: 1.5; color: #c9d2de">Drew can see your plan. After your next few calls, Call Coach will look for it and show you how it went.</p>
+      <button onClick="{{edit}}" style="min-height: 48px; padding: 0 20px; border-radius: 999px; border: 0; background: #1d2635; color: #e4eaf2; box-shadow: inset 0 0 0 1px #2c3749; font-size: 16px; font-weight: 600; cursor: pointer">Change my plan</button>
+      <a href="Progress.dc.html" style="margin-top: 40px; font-size: 13px; color: #8d99aa; border: 1px dashed #3a4658; border-radius: 10px; padding: 10px 12px">Prototype: see what Drew sees →</a>
+    </main>
+  </sc-if>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":1760}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { pos: 0, playing: false, text: '', done: false };
+  }
+  componentWillUnmount() { clearInterval(this.t); }
+  toggle() {
+    if (this.state.playing) { clearInterval(this.t); this.setState({ playing: false }); return; }
+    if (this.state.pos >= 28) this.setState({ pos: 0 });
+    this.setState({ playing: true });
+    this.t = setInterval(() => {
+      const p = this.state.pos + 1;
+      if (p >= 28) { clearInterval(this.t); this.setState({ pos: 28, playing: false }); }
+      else this.setState({ pos: p });
+    }, 1000);
+  }
+  renderVals() {
+    const text = this.state.text;
+    const empty = !text.trim();
+    const starters = [
+      'Before I share any facts, I’ll ask what the concern is like for them.',
+      'I’ll say “I’m sorry to hear that,” then ask one real question.',
+      'I’ll ask two questions about their situation before I pitch.'
+    ].map((t) => ({ t: t, pick: () => this.setState({ text: t }) }));
+    return {
+      notDone: !this.state.done,
+      done: this.state.done,
+      playing: this.state.playing,
+      paused: !this.state.playing,
+      playLabel: this.state.playing ? 'Pause the moment' : 'Play the moment, 28 seconds',
+      toggle: () => this.toggle(),
+      time: '0:' + String(this.state.pos).padStart(2, '0'),
+      barStyle: 'height:100%;border-radius:999px;background:#7fb2ec;width:' + Math.round(this.state.pos / 28 * 100) + '%',
+      starters: starters,
+      text: text,
+      onText: (e) => this.setState({ text: e.target.value }),
+      hint: empty ? 'Write at least a few words to save.' : 'Edit it so it sounds like you.',
+      submitDisabled: empty,
+      submitStyle: 'min-height:56px;border-radius:999px;border:0;font-size:17px;font-weight:700;' + (empty ? 'background:#1d2635;color:#7f8b9b;cursor:not-allowed' : 'background:#3f86d1;color:#fff;cursor:pointer'),
+      submit: () => { if (!empty) this.setState({ done: true, text: text.trim() }); },
+      edit: () => this.setState({ done: false })
+    };
+  }
+}
+</script>
+</body>
+</html>

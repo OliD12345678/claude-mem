@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Call with Victoria – Call Coach</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+body{margin:0;background:#0b111b}
+a{color:#7fb2ec;text-decoration:none}a:hover{color:#a9cdf5}
+.nav{color:#8d99aa;font-size:17px}.nav:hover{color:#eef2f7}
+button{font-family:inherit}
+</style>
+</helmet>
+<div style="position: relative; min-height: 1900px; background: #0b111b; color: #eef2f7; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, sans-serif; overflow: hidden">
+  <svg viewBox="0 0 400 400" width="980" height="980" aria-hidden="true" style="position: absolute; right: -300px; top: 160px; opacity: 0.045; pointer-events: none">
+    <g fill="#cfd8e6" transform="translate(200 200)">
+      <path d="M0 -20 C -28 -70 -22 -130 0 -168 C 22 -130 28 -70 0 -20Z"/>
+      <path d="M0 -20 C -28 -70 -22 -130 0 -168 C 22 -130 28 -70 0 -20Z" transform="rotate(45)"/>
+      <path d="M0 -20 C -28 -70 -22 -130 0 -168 C 22 -130 28 -70 0 -20Z" transform="rotate(90)"/>
+      <path d="M0 -20 C -28 -70 -22 -130 0 -168 C 22 -130 28 -70 0 -20Z" transform="rotate(135)"/>
+      <path d="M0 -20 C -28 -70 -22 -130 0 -168 C 22 -130 28 -70 0 -20Z" transform="rotate(180)"/>
+      <path d="M0 -20 C -28 -70 -22 -130 0 -168 C 22 -130 28 -70 0 -20Z" transform="rotate(225)"/>
+      <path d="M0 -20 C -28 -70 -22 -130 0 -168 C 22 -130 28 -70 0 -20Z" transform="rotate(270)"/>
+      <path d="M0 -20 C -28 -70 -22 -130 0 -168 C 22 -130 28 -70 0 -20Z" transform="rotate(315)"/>
+      <circle r="36"/>
+    </g>
+    <circle cx="200" cy="200" r="192" fill="none" stroke="#cfd8e6" stroke-width="12" stroke-dasharray="1 24" stroke-linecap="round"/>
+  </svg>
+
+  <header style="position: relative; max-width: 860px; margin: 0 auto; padding: 18px 24px; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap">
+    <a href="Calls.dc.html" style="font-size: 20px; display: flex; align-items: center; gap: 6px; min-height: 44px"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>Calls</a>
+    <nav aria-label="Main" style="display: flex; gap: 28px; align-items: center">
+      <a class="nav" href="Coach.dc.html">Coach</a>
+      <a class="nav" href="Calls.dc.html" aria-current="page" style="color: #eef2f7">Calls</a>
+      <a class="nav" href="Main.dc.html">This week</a>
+    </nav>
+    <button aria-label="Account menu for Drew" style="width: 44px; height: 44px; border-radius: 50%; border: 0; background: #3f86d1; color: #fff; font-weight: 700; font-size: 16px; cursor: pointer">D</button>
+  </header>
+
+  <main style="position: relative; max-width: 780px; margin: 0 auto; padding: 8px 24px 80px; display: flex; flex-direction: column; gap: 26px">
+    <div style="display: flex; flex-direction: column; gap: 8px">
+      <h1 style="margin: 0; font-size: 42px; letter-spacing: -0.5px">Call with Victoria</h1>
+      <span style="font-size: 16px; color: #8d99aa"><strong style="color: #eef2f7">Makenzie</strong> · Sep 26 at 12:32 PM · 4:19</span>
+    </div>
+
+    <div style="display: flex; align-items: center; gap: 18px">
+      <button aria-label="Play call" style="flex: none; width: 68px; height: 68px; border-radius: 50%; border: 0; background: #3f86d1; display: grid; place-items: center; cursor: pointer"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true" fill="#fff"><path d="M8 5.5v13a1 1 0 0 0 1.5.9l10-6.5a1 1 0 0 0 0-1.7l-10-6.5A1 1 0 0 0 8 5.5z"/></svg></button>
+      <div aria-hidden="true" style="flex: 1; display: flex; align-items: center; gap: 3px; height: 44px; min-width: 0">
+        <sc-for list="{{wave}}" as="w" hint-placeholder-count="60"><span style="{{w}}"></span></sc-for>
+      </div>
+      <span style="font-size: 15px; color: #9aa6b6; white-space: nowrap">0:00 / 4:19</span>
+    </div>
+
+    <div style="display: flex; flex-direction: column; gap: 6px; padding-left: 18px; border-left: 2px solid #263042">
+      <span style="font-size: 16px; color: #9aa6b6"><span style="font-size: 13px; color: #7f8b9b">0:52</span>  Asked about Pilates experience <span style="color: #8fe0da; font-size: 13px">· discovery question</span></span>
+      <span style="font-size: 16px; color: #9aa6b6"><span style="font-size: 13px; color: #7f8b9b">1:29</span>  Ask before you answer</span>
+      <span style="font-size: 16px; color: #9aa6b6"><span style="font-size: 13px; color: #7f8b9b">3:45</span>  Set up their first visit</span>
+    </div>
+
+    <p style="margin: 0; font-size: 19px; line-height: 1.6; color: #dbe2eb">Makenzie confirmed Victoria's booking warmly, asked solid questions about experience and injuries, and gave a clear, confident explanation of the reformer. The biggest miss was the neuropathy moment: Victoria said she was thinking about not coming, and the reply went straight to facts about low impact instead of first asking what neuropathy is actually like for her.</p>
+
+    <section aria-labelledby="this-week" style="background: #131c2a; border: 1px solid #2b3a52; border-radius: 22px; padding: 22px; display: flex; flex-direction: column; gap: 12px">
+      <div style="display: flex; justify-content: space-between; align-items: center; gap: 10px; flex-wrap: wrap">
+        <h2 id="this-week" style="margin: 0; font-size: 13px; font-weight: 700; letter-spacing: 2px; color: #7fb2ec">MAKENZIE'S CARD · WEEK OF SEP 28</h2>
+        <span style="height: 28px; display: inline-flex; align-items: center; padding: 0 12px; border-radius: 999px; background: rgba(116,198,157,0.16); color: #9ee0bd; font-size: 13px; font-weight: 600">Committed</span>
+      </div>
+      <p style="margin: 0; font-size: 19px; font-weight: 600; line-height: 1.4">“Ask what her neuropathy is like before sharing facts.”</p>
+      <span style="font-size: 14px; color: #8d99aa">Typed by Makenzie · Wed Sep 30, 8:12 PM · kept on 2 of 3 later calls · <a href="Progress.dc.html">See progress →</a></span>
+    </section>
+
+    <section aria-labelledby="disc" style="background: #151d2a; border: 1px solid #263042; border-radius: 22px; padding: 22px; display: flex; flex-direction: column; gap: 14px">
+      <div style="display: flex; justify-content: space-between; align-items: center; gap: 10px; flex-wrap: wrap">
+        <h2 id="disc" style="margin: 0; font-size: 13px; font-weight: 700; letter-spacing: 2px; color: #8fb4de">DISCOVERY ON THIS CALL</h2>
+        <span style="font-size: 11px; font-weight: 700; letter-spacing: 1px; padding: 3px 8px; border-radius: 6px; background: #2a2440; color: #c8b8f2">PROPOSED METRIC</span>
+      </div>
+      <div style="display: flex; align-items: center; gap: 12px">
+        <span aria-hidden="true" style="display: flex; gap: 6px"><span style="width: 36px; height: 10px; border-radius: 999px; background: #5cc6c0"></span><span style="width: 36px; height: 10px; border-radius: 999px; background: #2a3547"></span><span style="width: 36px; height: 10px; border-radius: 999px; background: #2a3547"></span></span>
+        <strong style="font-size: 17px">1 of a suggested 3 questions about the prospect before pitching</strong>
+      </div>
+      <ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 8px; font-size: 15px; color: #c9d2de">
+        <li><span style="color: #8fe0da">Counted</span> · 0:52 “Have you ever done Pilates or reformer before?”</li>
+        <li><span style="color: #9aa6b6">Not counted</span> · 1:05 “Any injuries we should know about?” (intake question, asked after the pitch began)</li>
+        <li><span style="color: #f0c47e">Opening missed</span> · 1:29 concern raised, reply went to facts</li>
+      </ul>
+      <button style="align-self: flex-start; min-height: 44px; padding: 0 16px; border-radius: 999px; border: 1px solid #2c3749; background: transparent; color: #c9d2de; font-size: 14px; font-weight: 600; cursor: pointer">This count looks wrong</button>
+    </section>
+
+    <h2 style="margin: 8px 0 0; font-size: 26px">Coaching moments</h2>
+    <article style="background: #151d2a; border: 1px solid #263042; border-radius: 28px; padding: 28px; display: flex; flex-direction: column; gap: 14px">
+      <div style="display: flex; justify-content: space-between; align-items: center">
+        <span style="display: inline-flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 700; letter-spacing: 2px; color: #8fb4de"><span aria-hidden="true" style="width: 8px; height: 8px; border-radius: 50%; background: #5cc6c0"></span>DISCOVERY</span>
+        <span style="font-size: 14px; font-weight: 700; color: #e58a92">High impact</span>
+      </div>
+      <h3 style="margin: 0; font-size: 32px">Ask before you answer</h3>
+      <p style="margin: 0; font-size: 18px; line-height: 1.5; color: #e4eaf2">Great job keeping Victoria on the books after she said she was thinking about canceling. Next time, before going to facts, ask one or two real questions.</p>
+      <span style="font-size: 15px; color: #9aa6b6">Sent as Makenzie's card Sep 30 · <a href="Main.dc.html">This week →</a></span>
+    </article>
+  </main>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1280,"height":1900}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const wave = [];
+    for (let i = 0; i < 60; i++) {
+      const h = 10 + Math.round(Math.abs(Math.sin(i * 1.7) * 22 + Math.cos(i * 0.6) * 10));
+      wave.push('flex:1;border-radius:2px;background:#4a5568;height:' + h + 'px');
+    }
+    return { wave: wave };
+  }
+}
+</script>
+</body>
+</html>
